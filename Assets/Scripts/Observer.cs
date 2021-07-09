@@ -23,7 +23,7 @@ public class Observer : MonoBehaviour
             m_IsPlayerInRange = false;
         }
     }
-
+// change for github
     void Update()
     {
         if (m_IsPlayerInRange)
