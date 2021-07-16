@@ -3583,6 +3583,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1917677812524680135, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4459282582536803688, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: player
@@ -3593,6 +3598,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 1504865509}
+    - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1079331061}
     - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -3693,6 +3703,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1917677812524680135, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4459282582536803688, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: player
@@ -3703,6 +3718,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 1504865509}
+    - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1079331061}
     - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -4869,6 +4889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1917677812524680135, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4459282582536803688, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: player
@@ -4879,6 +4904,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 1504865509}
+    - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1079331061}
     - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -5684,6 +5714,11 @@ PrefabInstance:
       objectReference: {fileID: 1504865509}
     - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1079331061}
+    - target: {fileID: 4793255363697762267, guid: a9b852d5c5138d241ada0a557437d4ae,
+        type: 3}
       propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5765,6 +5800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JohnLemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934483028636723624, guid: ddca297a2fbd1ee8a986e60568d5e72f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddca297a2fbd1ee8a986e60568d5e72f, type: 3}
