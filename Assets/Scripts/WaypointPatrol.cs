@@ -15,6 +15,10 @@ public class WaypointPatrol : MonoBehaviour
     float fovDist = 20.0f;
     float focAngle = 45.0f;
 
+    // FSM
+    enum State { Patrol, Investigate, Chase };
+    State CurState = State.Patrol;
+
     void Start()
     {
         navMeshAgent.SetDestination(waypoints[0].position);
@@ -39,11 +43,21 @@ public class WaypointPatrol : MonoBehaviour
 
     void Update()
     {
-        ICanSee(player);
-        if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
+                
+        if (ICanSee(player))
         {
-            m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
-            navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+            CurState = State.Chase;
+            navMeshAgent.ResetPath();
+            navMeshAgent.SetDestination(player.position);
+        }
+        else
+        {
+            if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
+            {
+                m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+                navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+            }
+            
         }
     }
 }
