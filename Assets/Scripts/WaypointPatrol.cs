@@ -26,6 +26,11 @@ public class WaypointPatrol : MonoBehaviour
     // Last place the player was seen
     Vector3 lastPlaceSeen;
 
+    public void InvestigatePoint(Vector3 point)
+    {
+        lastPlaceSeen = point;
+        curState = State.Investigate;
+    }
     void Start()
     {
         navMeshAgent.SetDestination(waypoints[0].position);

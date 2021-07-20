@@ -3770,7 +3770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694697870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3, y: 0.68733, z: 6.15}
+  m_LocalPosition: {x: -1.63, y: 0.68733, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1034869995}
@@ -3893,7 +3893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737997901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.4, y: 0, z: -2}
+  m_LocalPosition: {x: 7.61, y: 0, z: -2.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1034869995}
@@ -4208,7 +4208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971419171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 0, z: -4.5}
+  m_LocalPosition: {x: -1.52, y: 0, z: -3.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1034869995}
@@ -5655,7 +5655,7 @@ PrefabInstance:
     - target: {fileID: 1917677812524326887, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 1917677812524326887, guid: a9b852d5c5138d241ada0a557437d4ae,
         type: 3}
@@ -5751,6 +5751,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 507277816, guid: ddca297a2fbd1ee8a986e60568d5e72f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507277816, guid: ddca297a2fbd1ee8a986e60568d5e72f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801207695496989916, guid: ddca297a2fbd1ee8a986e60568d5e72f,
+        type: 3}
+      propertyPath: clash
+      value: 
+      objectReference: {fileID: 8300000, guid: 374e10c6de924ef5b8de93da3e62f397, type: 3}
+    - target: {fileID: 5801207695496989916, guid: ddca297a2fbd1ee8a986e60568d5e72f,
+        type: 3}
+      propertyPath: footStep
+      value: 
+      objectReference: {fileID: 8300000, guid: 07e520bb410492d47bf739846d70f2a3, type: 3}
     - target: {fileID: 8934483028636497288, guid: ddca297a2fbd1ee8a986e60568d5e72f,
         type: 3}
       propertyPath: m_RootOrder

@@ -12,15 +12,43 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
 
+    public AudioClip clash;
+    public AudioClip footStep;
+
+    float knockRadius = 5.0f;
+
+    IEnumerator PlayKnock()
+    {
+        m_AudioSource.PlayOneShot(clash);
+        yield return new WaitForSeconds(clash.length);
+        
+    }
     void Start ()
     {
         m_Animator = GetComponent<Animator> ();
         m_Rigidbody = GetComponent<Rigidbody> ();
         m_AudioSource = GetComponent<AudioSource>();
+ 
     }
 
     void FixedUpdate ()
     {
+        if (Input.GetKey("space"))
+        {
+            StartCoroutine(PlayKnock()); // Play audio file
+
+            // Create the sphere collider
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, knockRadius);
+            for (int i = 0; i < hitColliders.Length; i ++) // check the collosions
+            {
+                // if it's a guard, trigger the investigation
+                if (hitColliders[i].tag == "Guard")
+                {
+                    hitColliders[i].GetComponent<WaypointPatrol>().InvestigatePoint(this.transform.position);
+                }
+            }
+        }
+        
         float horizontal = Input.GetAxis ("Horizontal");
         float vertical = Input.GetAxis ("Vertical");
         
@@ -35,16 +63,25 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!m_AudioSource.isPlaying)
             {
-                m_AudioSource.Play();
+                // m_AudioSource.Play();
+                m_AudioSource.PlayOneShot(footStep, 1.0f);  
             }
         }
+        else if (Input.GetKey("space") && !isWalking)
+        {
+            m_AudioSource.PlayOneShot(footStep, 0f);
+            m_AudioSource.PlayOneShot(clash, 1f);
+        }
+
         else
         {
-            m_AudioSource.Stop();
+            m_AudioSource.Stop(); 
         }
 
         Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation (desiredForward);
+
+        
     }
 
     void OnAnimatorMove ()
