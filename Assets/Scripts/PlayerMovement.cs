@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip clash;
     public AudioClip footStep;
 
+    float timeClipPlay = 0.0f;
+
     float knockRadius = 5.0f;
 
     IEnumerator PlayKnock()
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey("space"))
         {
+            timeClipPlay = 0.0f;
             StartCoroutine(PlayKnock()); // Play audio file
 
             // Create the sphere collider
@@ -47,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
                     hitColliders[i].GetComponent<WaypointPatrol>().InvestigatePoint(this.transform.position);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
         
         float horizontal = Input.GetAxis ("Horizontal");
@@ -63,19 +71,20 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!m_AudioSource.isPlaying)
             {
-                // m_AudioSource.Play();
-                m_AudioSource.PlayOneShot(footStep, 1.0f);  
+                m_AudioSource.Play();  
             }
+        
+        //else if (Input.GetKey("space") && !isWalking && timeClipPlay < 1.0)
+        //{
+           //timeClipPlay += Time.deltaTime;
+           //m_AudioSource.PlayOneShot(footStep, 0f);
+           //m_AudioSource.PlayOneShot(clash, 1f);
+        //}
         }
-        else if (Input.GetKey("space") && !isWalking)
-        {
-            m_AudioSource.PlayOneShot(footStep, 0f);
-            m_AudioSource.PlayOneShot(clash, 1f);
-        }
-
         else
         {
             m_AudioSource.Stop(); 
+            //m_AudioSource.PlayOneShot(footStep, 0f);
         }
 
         Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
